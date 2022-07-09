@@ -1,9 +1,12 @@
 package com.simbirsoft.pages.components;
 
+import io.qameta.allure.Step;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class CalendarComponent {
 
+    @Step("Выбрать день {day}, месяц {month} и год рождения {year}")
     public CalendarComponent setDate(String day, String month, String year) {
         $("input#dateOfBirthInput").click();
         $("select.react-datepicker__month-select").selectOption(month);

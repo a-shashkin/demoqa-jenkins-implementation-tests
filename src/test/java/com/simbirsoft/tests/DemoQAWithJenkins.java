@@ -2,6 +2,8 @@ package com.simbirsoft.tests;
 
 import com.github.javafaker.Faker;
 import com.simbirsoft.pages.RegistrationPage;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -10,6 +12,8 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
+@Feature("Страница регистрации студента DemoQA")
+@Owner("Alexander Shashkin")
 public class DemoQAWithJenkins extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
@@ -23,6 +27,10 @@ public class DemoQAWithJenkins extends TestBase {
     String userCurrentAddress = faker.address().fullAddress();
 
     @Test
+    @Story("Регистрация студента")
+    @DisplayName("Проверка отображения введённых данных в модальном окне")
+    @Severity(SeverityLevel.BLOCKER)
+    @Link(name = "Страница регистрации", url = "http://demoqa.com/automation-practice-form")
     void fillFormAndSubmit() {
 
         registrationPage.openPage()

@@ -5,6 +5,7 @@ import com.simbirsoft.pages.components.CalendarComponent;
 import com.simbirsoft.pages.components.DropdownComponent;
 import com.simbirsoft.pages.components.ModalWindowComponent;
 import com.simbirsoft.pages.components.SubjectInputComponent;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -34,62 +35,74 @@ public class RegistrationPage {
     public DropdownComponent dropdownComponent = new DropdownComponent();
     public ModalWindowComponent modalWindowComponent = new ModalWindowComponent();
 
+    @Step("Открыть страницу с формой регистрации")
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         formTitle.shouldHave(text(FORM_TITLE));
         return this;
     }
 
+    @Step("Напечатать имя {firstName}")
     public RegistrationPage typeFirstName(String firstName) {
         firstNameInput.setValue(firstName);
         return this;
     }
 
+    @Step("Напечатать фамилию {lastName}")
     public RegistrationPage typeLastName(String lastName) {
         lastNameInput.setValue(lastName);
         return this;
     }
 
+    @Step("Напечатать email {email}")
     public RegistrationPage typeEmail(String email) {
         emailInput.setValue(email);
         return this;
     }
 
+    @Step("Напечатать телефон {phone}")
     public RegistrationPage typePhone(String phone) {
         phoneInput.setValue(phone);
         return this;
     }
 
+    @Step("Загрузить аватар")
     public RegistrationPage uploadUserPic() {
         userPicUpload.uploadFromClasspath(userPicClasspath);
         return this;
     }
 
+    @Step("Выбрать мужской пол")
     public RegistrationPage selectMaleGender() {
         selectorMaleGender.click();
         return this;
     }
 
+    @Step("Выбрать женский пол")
     public RegistrationPage selectFemaleGender() {
         selectorFemaleGender.click();
         return this;
     }
 
+    @Step("Выбрать другой пол")
     public RegistrationPage selectOtherGender() {
         selectorOtherGender.click();
         return this;
     }
 
+    @Step("Выбрать хобби {hobby}")
     public RegistrationPage clickHobby(String hobby) {
         checkboxHobby.$(byText(hobby)).click();
         return this;
     }
 
+    @Step("Напечатать адрес {address}")
     public RegistrationPage typeAddress(String address) {
         userAddressInput.setValue(address);
         return this;
     }
 
+    @Step("Нажать кнопку Submit")
     public RegistrationPage clickSubmitButton() {
         submitButton.click();
         return this;
