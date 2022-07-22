@@ -11,6 +11,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import static java.lang.String.format;
+
 public class TestBase {
     @BeforeAll
     @Tag("test_properties")
@@ -27,7 +29,10 @@ public class TestBase {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
 
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        String remote_browser_url_value = System.getProperty("remote_browser_url");
+        String login = credentials.login();
+        String password = credentials.password();
+        Configuration.remote = format("https://%s:%s@%s", login, password, remote_browser_url_value);
     }
 
     @AfterEach
