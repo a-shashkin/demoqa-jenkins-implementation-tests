@@ -29,10 +29,10 @@ public class TestBase {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
 
-        String remote_browser_url_value = System.getProperty("remote_browser_url");
         String login = credentials.login();
         String password = credentials.password();
-        Configuration.remote = format("https://%s:%s@%s", login, password, remote_browser_url_value);
+        String browserURL = System.getProperty("url", credentials.browserURL());
+        Configuration.remote = format("https://%s:%s@%s", login, password, browserURL);
     }
 
     @AfterEach
