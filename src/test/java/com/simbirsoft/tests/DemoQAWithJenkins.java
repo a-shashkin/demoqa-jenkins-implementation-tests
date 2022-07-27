@@ -53,7 +53,7 @@ public class DemoQAWithJenkins extends TestBase {
                 .selectSubject("English");
 
         registrationPage.dropdownComponent.selectElementFromDropdown("state", "NCR")
-                .selectElementFromDropdown("city", "Noida");
+                .selectElementFromDropdown("city", "Delhi");
 
         registrationPage.clickSubmitButton();
 
@@ -70,7 +70,7 @@ public class DemoQAWithJenkins extends TestBase {
         registrationPage.modalWindowComponent.table.$(byText("Hobbies")).parent().shouldHave(text("Reading, Music"));
         registrationPage.modalWindowComponent.table.$(byText("Picture")).parent().shouldHave(text("7dBulQtN5gc.jpg"));
         registrationPage.modalWindowComponent.table.$(byText("Address")).parent().shouldHave(text(userCurrentAddress));
-        registrationPage.modalWindowComponent.table.$(byText("State and City")).parent().shouldHave(text("NCR Noida"));
+        registrationPage.modalWindowComponent.table.$(byText("State and City")).parent().shouldHave(text("NCR Delhi"));
 
         registrationPage.modalWindowComponent.closeModalButton.shouldBe(visible);
     }
