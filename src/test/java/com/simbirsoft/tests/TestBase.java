@@ -15,7 +15,6 @@ import static java.lang.String.format;
 
 public class TestBase {
     @BeforeAll
-    @Tag("test_properties")
     static void beforeAll() {
         CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
 

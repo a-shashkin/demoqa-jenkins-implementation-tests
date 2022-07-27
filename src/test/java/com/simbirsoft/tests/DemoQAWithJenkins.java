@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import com.simbirsoft.pages.RegistrationPage;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -27,6 +28,7 @@ public class DemoQAWithJenkins extends TestBase {
     String userCurrentAddress = faker.address().fullAddress();
 
     @Test
+    @Tag("test_properties")
     @Story("Регистрация студента")
     @DisplayName("Проверка отображения введённых данных в модальном окне")
     @Severity(SeverityLevel.BLOCKER)

@@ -8,6 +8,7 @@ import com.simbirsoft.pages.components.SubjectInputComponent;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -105,6 +106,23 @@ public class RegistrationPage {
     @Step("Нажать кнопку Submit")
     public RegistrationPage clickSubmitButton() {
         submitButton.click();
+        return this;
+    }
+
+    @Step("Проверить отображение элементов")
+    public RegistrationPage checkPresenceOfElements() {
+        formTitle.shouldBe(visible);
+        firstNameInput.shouldBe(visible);
+        lastNameInput.shouldBe(visible);
+        emailInput.shouldBe(visible);
+        phoneInput.shouldBe(visible);
+        userPicUpload.shouldBe(visible);
+        selectorMaleGender.shouldBe(visible);
+        selectorFemaleGender.shouldBe(visible);
+        selectorOtherGender.shouldBe(visible);
+        checkboxHobby.shouldBe(visible);
+        userAddressInput.shouldBe(visible);
+        submitButton.shouldBe(visible);
         return this;
     }
 }

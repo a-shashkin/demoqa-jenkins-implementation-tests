@@ -61,3 +61,9 @@ task properties_tests(type: Test) {
         includeTags "test_properties"
     }
 }
+
+task no_filling_fields_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "open_only"
+    }
+}
