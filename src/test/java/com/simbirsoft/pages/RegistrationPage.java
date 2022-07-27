@@ -1,5 +1,6 @@
 package com.simbirsoft.pages;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.simbirsoft.pages.components.CalendarComponent;
 import com.simbirsoft.pages.components.DropdownComponent;
@@ -39,11 +40,7 @@ public class RegistrationPage {
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         formTitle.shouldHave(text(FORM_TITLE));
-        if ($(".adsbygoogle").is(visible)) {
-            executeJavaScript(
-                    "$('.adsbygoogle').hide();"
-            );
-        }
+        Selenide.refresh();
         return this;
     }
 
