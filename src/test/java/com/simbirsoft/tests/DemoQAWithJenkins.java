@@ -33,7 +33,7 @@ public class DemoQAWithJenkins extends TestBase {
     @DisplayName("Проверка отображения введённых данных в модальном окне")
     @Severity(SeverityLevel.BLOCKER)
     @Link(name = "Страница регистрации", url = "http://demoqa.com/automation-practice-form")
-    void fillFormAndSubmit() {
+    void fillFormAndSubmit() throws InterruptedException {
 
         registrationPage.openPage()
                 .typeFirstName(firstName)

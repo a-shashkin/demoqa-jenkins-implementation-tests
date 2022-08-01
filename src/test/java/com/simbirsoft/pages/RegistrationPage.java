@@ -37,9 +37,10 @@ public class RegistrationPage {
     public ModalWindowComponent modalWindowComponent = new ModalWindowComponent();
 
     @Step("Открыть страницу с формой регистрации")
-    public RegistrationPage openPage() {
+    public RegistrationPage openPage() throws InterruptedException {
         open("/automation-practice-form");
         formTitle.shouldHave(text(FORM_TITLE));
+        Thread.sleep(4000);
         if ($("#adplus-anchor").isDisplayed()) {
 //            $("#cbb").click();
 //            $("#report_btn").click();
