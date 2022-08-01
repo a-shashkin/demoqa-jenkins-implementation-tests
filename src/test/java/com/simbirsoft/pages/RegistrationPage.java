@@ -110,7 +110,7 @@ public class RegistrationPage {
 
     @Step("Нажать кнопку Submit")
     public RegistrationPage clickSubmitButton() {
-        submitButton.click();
+        submitButton.scrollIntoView(true).click();
         return this;
     }
 
