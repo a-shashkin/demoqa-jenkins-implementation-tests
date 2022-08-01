@@ -41,10 +41,10 @@ public class RegistrationPage {
         open("/automation-practice-form");
         formTitle.shouldHave(text(FORM_TITLE));
         if ($("#adplus-anchor").isDisplayed()) {
-            $("#cbb").click();
-            $("#report_btn").click();
-            $("#report_btn").click();
-            $(byText("Ad covered content")).parent().click();
+//            $("#cbb").click();
+//            $("#report_btn").click();
+//            $("#report_btn").click();
+//            $(byText("Ad covered content")).parent().click();
             $("#close-fixedban").click();
         }
         return this;
