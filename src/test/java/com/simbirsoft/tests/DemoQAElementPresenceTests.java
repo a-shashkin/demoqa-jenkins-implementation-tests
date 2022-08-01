@@ -18,7 +18,7 @@ public class DemoQAElementPresenceTests extends TestBase {
     @DisplayName("Проверка отображения элементов на странице (без заполнения)")
     @Severity(SeverityLevel.BLOCKER)
     @Link(name = "Страница регистрации", url = "http://demoqa.com/automation-practice-form")
-    void openPageAndCheckElements() throws InterruptedException {
+    void openPageAndCheckElements() {
 
         registrationPage.openPage()
                         .checkPresenceOfElements();
