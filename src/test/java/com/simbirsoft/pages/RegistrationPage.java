@@ -40,7 +40,13 @@ public class RegistrationPage {
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         formTitle.shouldHave(text(FORM_TITLE));
-        Selenide.refresh();
+        if ($("#adplus-anchor").isDisplayed()) {
+            $("#cbb").click();
+            $("#report_btn").click();
+            $("#report_btn").click();
+            $(byText("Ad covered content")).parent().click();
+            $("#close-fixedban").click();
+        }
         return this;
     }
 

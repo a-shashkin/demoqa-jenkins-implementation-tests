@@ -12,7 +12,7 @@ public class DropdownComponent {
         String selector = "div#%s";
         String formattedSelector = String.format(selector, geoElement);
         $(formattedSelector).click();
-        $("div#stateCity-wrapper").$(byText(geographicName)).click();
+        $("div#stateCity-wrapper").$(byText(geographicName)).scrollIntoView(true).click();
         return this;
     }
 }
