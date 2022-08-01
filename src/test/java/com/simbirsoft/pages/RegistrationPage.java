@@ -42,10 +42,6 @@ public class RegistrationPage {
         formTitle.shouldHave(text(FORM_TITLE));
         Thread.sleep(4000);
         if ($("#adplus-anchor").isDisplayed()) {
-//            $("#cbb").click();
-//            $("#report_btn").click();
-//            $("#report_btn").click();
-//            $(byText("Ad covered content")).parent().click();
             $("#close-fixedban").click();
         }
         return this;
