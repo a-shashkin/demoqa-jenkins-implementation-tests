@@ -1,4 +1,4 @@
-package com.simbirsoft.tests.helpers;
+package com.simbirsoft.helpers;
 
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
